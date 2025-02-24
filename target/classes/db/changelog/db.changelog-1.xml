@@ -4,7 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <!-- Создание таблицы users -->
     <changeSet id="001-create-users-table" author="user">
         <preConditions onFail="MARK_RAN">
             <not>
@@ -33,7 +32,6 @@
         </createTable>
     </changeSet>
 
-    <!-- Создание таблицы roles -->
     <changeSet id="002-create-roles-table" author="user">
         <preConditions onFail="MARK_RAN">
             <not>
