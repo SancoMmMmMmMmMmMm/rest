@@ -64,3 +64,33 @@ async function showDeleteModal(id) {
             })
         })
 }
+$("#formNewUser").on("submit", function (event) {
+    event.preventDefault();
+
+    let user = {
+        name: $("#name").val(),
+        lastName: $("#lastName").val(),
+        age: $("#age").val(),
+        email: $("#email").val(),
+        password: $("#password").val(),
+        roles: $("#addRoles").val().map(role => ({ id: role }))
+    };
+
+    fetch("/api/admin/new", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error("Ошибка при создании пользователя");
+    }).then(data => {
+        console.log("Пользователь создан:", data);
+        $("#formNewUser")[0].reset();
+        $('#myTab a[href="#adminPage"]').tab('show'); // Возвращаемся на таблицу пользователей
+        allUsers();
+    }).catch(error => console.error(error));
+});

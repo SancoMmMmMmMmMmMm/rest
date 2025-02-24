@@ -7,12 +7,9 @@ import java.util.List;
 
 public interface RoleService {
 
-    @Transactional
     List<Role> getRoles();
 
-    @Transactional
     Role getRoleById(Long id);
 
-    @Transactional
     void saveRole(Role role);
 }

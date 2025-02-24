@@ -31,3 +31,15 @@ async function allUsers() {
             })
         })
 }
+$(document).ready(function () {
+    // Проверяем, какая вкладка была открыта
+    let activeTab = localStorage.getItem('activeTab');
+    if (activeTab) {
+        $('#myTab a[href="' + activeTab + '"]').tab('show');
+    }
+
+    // Сохраняем выбранную вкладку при клике
+    $('#myTab a').on('shown.bs.tab', function (e) {
+        localStorage.setItem('activeTab', $(e.target).attr('href'));
+    });
+});
