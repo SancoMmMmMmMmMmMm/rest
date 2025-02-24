@@ -33,13 +33,13 @@ p {
     margin-bottom: 1rem;
 }
 
-/*Table users*/
 .usersTable {
     width: 98%;
     margin-left: 1%;
     margin-right: 1%;
     border: none;
 }
+
 .thId {
     width: 10%;
 }
@@ -73,7 +73,6 @@ p {
     width: 10%;
 }
 
-/*Table users*/
 
 .userInfoTable {
     width: 98%;
@@ -81,6 +80,7 @@ p {
     margin-right: 1%;
     border: none;
 }
+
 .thId2 {
     width: 15%;
 }
